@@ -25,9 +25,9 @@ app.use(
 app.use(express.json())
 
 //GET
-app.get("/", (req, res) => {
-    res.json({ message: "Oi Express!"});
-});
+//app.get("/", (req, res) => {
+    //res.json({ message: "Oi Express!"});
+//});
 
 //POST
 app.post('/person', async (req, res) => {
@@ -48,7 +48,7 @@ app.post('/person', async (req, res) => {
     }
 })
 
-//PUT - reutilizando o GET
+//GET 
 app.get('/person', async (req, res) => {
     try {
         const people = await Person.find()
@@ -59,7 +59,7 @@ app.get('/person', async (req, res) => {
     }
 })
 
-//PUT por id - reutilizando o código de GET
+//GET por id - reutilizando o código de GET
 app.get('/person/:id', async (req, res) => {
     const id = req.params.id
     
